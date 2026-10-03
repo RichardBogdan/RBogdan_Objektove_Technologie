@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.rbogdanhw.HelloController">
-  <padding>
-    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-  </padding>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
 
-  <Label fx:id="welcomeText"/>
-  <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.rbogdanhw.HelloController">
+   <children>
+      <TextField fx:id="tf1" layoutX="28.0" layoutY="56.0" />
+      <TextField fx:id="tf2" layoutX="28.0" layoutY="118.0" />
+      <Label layoutX="28.0" layoutY="31.0" text="Zadajte svoju váhu v kg" />
+      <Label layoutX="28.0" layoutY="94.0" text="Zadajte svoju výšku c centimetroch" />
+      <Label fx:id="BMI" layoutX="28.0" layoutY="161.0" text="BMI:" />
+      <Label fx:id="Kategoria" layoutX="28.0" layoutY="192.0" text="Kategória:" />
+      <Button fx:id="button" layoutX="28.0" layoutY="242.0" mnemonicParsing="false" onAction="#klik" text="Zistiť BMI" />
+      <Label fx:id="chyba" layoutX="28.0" layoutY="291.0" prefHeight="17.0" prefWidth="230.0" text="Zrejme ste zabudli vloziť váhu alebo výšku" visible="false" />
+   </children>
+</Pane>
