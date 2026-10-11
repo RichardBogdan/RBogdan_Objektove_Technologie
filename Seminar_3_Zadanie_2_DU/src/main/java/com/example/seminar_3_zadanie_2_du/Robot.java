@@ -13,7 +13,7 @@ import javafx.util.Duration;
 
 public class Robot extends Canvas{
     private GraphicsContext gc;
-    private Timeline t1,t2;
+    private Timeline t1,t2,t3,t4;
     private boolean pohyb = false;
     private int smer = 1;
     private int polohax = 10;
@@ -44,6 +44,10 @@ public class Robot extends Canvas{
         t1.setCycleCount(Timeline.INDEFINITE);
         t2 = new Timeline(new KeyFrame(Duration.millis(100) ,e -> pohyb_l()));
         t2.setCycleCount(Timeline.INDEFINITE);
+        t3 = new Timeline(new KeyFrame(Duration.millis(100) ,e -> pohyb_h()));
+        t3.setCycleCount(Timeline.INDEFINITE);
+        t4 = new Timeline(new KeyFrame(Duration.millis(100) ,e -> pohyb_d()));
+        t4.setCycleCount(Timeline.INDEFINITE);
     }
 
     protected void vykresli(int smer){
@@ -62,12 +66,19 @@ public class Robot extends Canvas{
 
     protected void start(){
         if(!pohyb){
-            t1.play();
+            switch (smer){
+                case 1:t1.play();break;
+                case 2:t2.play();break;
+                case 3:t3.play();break;
+                case 4:t4.play();break;
+            }
             pohyb = true;
         }
         else{
             t1.stop();
             t2.stop();
+            t3.stop();
+            t4.stop();
             pohyb = false;
         }
     }
@@ -120,15 +131,24 @@ public class Robot extends Canvas{
     }
     protected void pohyb_h(){
         smer = 3;
-        if(polohay == 0){return;}  //opr
-        else polohay -= 10;
+        if(polohay == 0 && !pohyb){return;}  //opr
+        else if (polohay != 0)  polohay -= 10;
         vykresli(smer);
+        if(polohay <= 0 && pohyb){
+            t3.stop();
+            t4.play();
+        }
     }
     protected void pohyb_d(){
         smer = 4;
-        if (polohay == 350) {; return;} //opr
-        else polohay += 10;
+        if (polohay == 350 && !pohyb) {; return;} //opr
+        else if (polohay != 350)polohay += 10;
         vykresli(smer);
+        if (polohay >= 350 && pohyb){
+            t3.play();
+            t4.stop();
+        }
+
     }
 
 }
