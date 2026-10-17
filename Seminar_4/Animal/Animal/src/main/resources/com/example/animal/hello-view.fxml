@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.animal.HelloController">
+   <children>
+      <Button fx:id="zmenPohyb" layoutX="23.0" layoutY="14.0" mnemonicParsing="false" onAction="#onZmenSmer" text="Zmena pohybu carnivora" />
+      <Button fx:id="zastav" layoutX="189.0" layoutY="14.0" mnemonicParsing="false" onAction="#onStop" text="Zastav" />
+      <Button fx:id="pc" layoutX="256.0" layoutY="14.0" mnemonicParsing="false" onAction="#onPridajCarnivore" text="Pridaj carn" />
+      <Button fx:id="ph" layoutX="339.0" layoutY="14.0" mnemonicParsing="false" onAction="#onPridajHerbivore" text="Pridaj herb" />
+   </children>
+</Pane>
