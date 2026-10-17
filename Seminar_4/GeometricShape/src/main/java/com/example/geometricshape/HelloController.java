@@ -1,8 +1,12 @@
 package com.example.geometricshape;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.scene.Node;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+
+
+import java.awt.*;
 
 public class HelloController {
     @FXML
@@ -28,4 +32,22 @@ public class HelloController {
         re = new MyRectangle();
         root.getChildren().add(re);
     }
+    @FXML
+    public void zmenFarbuKruhu() {
+        for (Node my : root.getChildren()) {
+            if (my instanceof MyCircle) {
+                ((MyCircle) my).zmenaFarby(Color.BLUE);
+            }
+        }
+    }
+
+    @FXML
+    public void posunDole(){
+            for (int i = 0; i < root.getChildren().size(); i++) {
+                Node my = root.getChildren().get(i);
+                if (my instanceof GeometricShape) ((GeometricShape)my).posunDole();
+            }
+
+    }
+
 }

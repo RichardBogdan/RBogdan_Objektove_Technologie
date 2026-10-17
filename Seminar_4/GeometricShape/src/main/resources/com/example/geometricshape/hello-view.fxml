@@ -3,12 +3,12 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.Pane?>
 
-
 <Pane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.geometricshape.HelloController">
    <children>
       <Button fx:id="kocka" layoutX="24.0" layoutY="25.0" mnemonicParsing="false" onAction="#onClickSquare" text="Kocka" />
       <Button fx:id="obdlznik" layoutX="86.0" layoutY="25.0" mnemonicParsing="false" onAction="#onClickRectangle" text="Obdĺžnik" />
       <Button fx:id="kruh" layoutX="170.0" layoutY="25.0" mnemonicParsing="false" onAction="#onClickCircle" text="Kruh" />
-      <Button fx:id="posunD" layoutX="226.0" layoutY="25.0" mnemonicParsing="false" text="PosunDole" />
+      <Button fx:id="posunD" layoutX="226.0" layoutY="25.0" mnemonicParsing="false" onAction="#posunDole" text="PosunDole" />
+      <Button fx:id="zmenafarbykruhu" layoutX="316.0" layoutY="25.0" mnemonicParsing="false" onAction="#zmenFarbuKruhu" text="Zmena farby kruhu" />
    </children>
 </Pane>
